@@ -4,9 +4,9 @@
 {% block content %}
     <center>
         <h2>URL: "{{ obj.original_url }}"</h2>
-        <h4><a href ='{{ obj.short_url}}'> Your Request: "{{ obj.short_url}}"</h4>
+        <h4><a href ='{{ obj.short_url}}'> New URL is : "{{ obj.short_url}}"</h4>
         
-		<p class="animated fadeIn text-muted mb-4"> Count: {{ obj.click_analyse.count }}</p>
+		<p class="animated fadeIn text-muted mb-4"> Statistic: {{ obj.click_analyse.count }}</p>
 		
         <a href="{{ obj.original_url }}"><button type="button" class="btn btn-primary">Go To Website</button></a>
     </center>

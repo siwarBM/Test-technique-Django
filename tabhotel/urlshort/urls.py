@@ -1,6 +1,6 @@
 from django.shortcuts import redirect
 from django.urls import path
-from .views import home, createShortURL, ShortRedirectView, redirect
+from .views import home, createShortURL, redirect
 
 urlpatterns = [
     path('', home, name='home'),

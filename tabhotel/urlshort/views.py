@@ -38,18 +38,3 @@ def redirect(request, url):
         return render(request, 'pagenotfound.html')
     context = {'obj':current_obj[0]}
     return render(request, 'redirect.html', context)   
-class ShortRedirectView(View):
-	def get(self, request, shortcode=None, *args, **kwargs):
-
-         qs= ShortURL.objects.filter(short_url=shortcode)
-         if qs.count()!=1 and not qs.exists():
-             raise Http404
-         obj = qs.first()
-         print(ClickAnalytic.objects.click_analyse(obj))
-         return HttpResponseRedirect(obj.short_url)
-       
-		#object = get_object_or_404(ShortURL, shortcode=shortcode)
-        
-		#obj_url = object.url
-		#ClickAnalytic.objects.click_analyse(object)
-		#return HttpResponseRedirect(obj_url)
